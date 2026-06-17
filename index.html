@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💍 Em Làm Vợ Anh Nhé ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    color:white;
+    font-size:60px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    position:relative;
+    width:450px;
+    height:150px;
+    margin:auto;
+}
+
+button{
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    font-size:22px;
+    cursor:pointer;
+}
+
+#yesBtn{
+    background:#ff4d6d;
+    color:white;
+}
+
+#yesBtn:hover{
+    transform:scale(1.05);
+}
+
+#noBtn{
+    position:absolute;
+    left:250px;
+    background:white;
+    color:#ff4d6d;
+}
+
+#result{
+    display:none;
+}
+
+#result h2{
+    color:white;
+    margin-bottom:20px;
+    font-size:36px;
+}
+
+video{
+    width:700px;
+    max-width:90vw;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,0,0,.3);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 id="title">💍 Em Làm Vợ Anh Nhé? ❤️</h1>
+
+    <div class="buttons" id="buttons">
+        <button id="yesBtn">Đồng Ý 💖</button>
+        <button id="noBtn">Không 😢</button>
+    </div>
+
+    <div id="result">
+        <h2>❤️ Cảm Ơn Em Đã Đồng Ý ❤️</h2>
+
+        <video controls autoplay loop muted>
+            <source src="video/Em.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ video.
+        </video>
+    </div>
+
+</div>
+
+<script>
+
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const result = document.getElementById("result");
+const title = document.getElementById("title");
+const buttons = document.getElementById("buttons");
+
+noBtn.addEventListener("mouseover", () => {
+
+    const maxX = window.innerWidth - noBtn.offsetWidth;
+    const maxY = window.innerHeight - noBtn.offsetHeight;
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = Math.random() * maxX + "px";
+    noBtn.style.top = Math.random() * maxY + "px";
+
+});
+
+yesBtn.addEventListener("click", () => {
+
+    title.style.display = "none";
+    buttons.style.display = "none";
+    result.style.display = "block";
+
+});
+
+</script>
+
+</body>
+</html>
